@@ -1,7 +1,7 @@
 <template>
     <div class="login">
     <h1>Login</h1>
-    <form @submit.prevent="saveMovie" id="loginForm">
+    <form @submit.prevent="Login" id="loginForm">
         <div v-if="result.errors">
             <ul class="alert alert-danger">
                 <li v-for="error in result.errors">{{ error }}</li>
@@ -42,7 +42,7 @@
         getCsrfToken()
     })
 
-    const saveMovie = () => {
+    const Login = () => {
         let loginForm = document.getElementById("loginForm")
         let form_data = new FormData(loginForm)
         fetch("/api/v1/auth/login", {
