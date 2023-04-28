@@ -81,7 +81,7 @@ def register():
         joined = user.joined_on
 
         return jsonify({
-            "message": "User successfully added",
+            "message": "Your new Photogram account was successfully created",
             "username": str(username),
             "password": str(user.password),
             "firstname": str(firstname),
@@ -119,7 +119,7 @@ def login():
         data['username'] = user.username
         token = jwt.encode(data, app.config["SECRET_KEY"], algorithm="HS256")
         return jsonify({
-            "message": "User successfully logged in",
+            "message": "Login was successful",
             "token": token
         })
 
